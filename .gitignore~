@@ -1,0 +1,4 @@
+libs/opencv2.framework/
+*.DS_Store
+Examples/single_image/bin/data/dnn/enet-model-best.net
+Examples/single_image/bin/data/dnn/fcn8s-heavy-pascal.caffemodel
