@@ -15,11 +15,11 @@
 # and the PG will write to the console the kind of error and in which line it is
 
 meta:
-ADDON_NAME = ofxOpenCvDnnOpenPose
-ADDON_DESCRIPTION = OpenCV DNN Module for OpenPose addon.
+ADDON_NAME = ofxOpenCvDnnSegmentation
+ADDON_DESCRIPTION = OpenCV DNN Module for Segmentation addon.
 ADDON_AUTHOR = Tetsuaki Baba
-ADDON_TAGS = "computer vision" "opencv" "image processing"  "darknet" "yolov2" "object detection" "classification"
-ADDON_URL = https://github.com/TetsuakiBaba
+ADDON_TAGS = "computer vision" "opencv" "image processing"  "segmentation"
+ADDON_URL = https://github.com/TetsuakiBaba/ofxOpenCvDnnSegmentation
 
 common:
 ADDON_INCLUDES  = libs/opencv2.framework
