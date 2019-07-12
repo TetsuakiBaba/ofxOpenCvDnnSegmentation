@@ -9,6 +9,7 @@ OpenCV v.3.3.1 or upper includes some dnn modules in their own package. Therefor
 ![sample gif](output.gif)
 ![sample gif](sample.png)
 
+
 ## Usage
 See Examples for more details. You can find how to get each class detected segmentation with ofPolyline.
 ```
@@ -31,7 +32,7 @@ void draw()
 ## Install
 ### 1. Clone ofxOpenCvDnnSegmentation to your of/addon directory
     $ git clone https://github.com/TetsuakiBaba/ofxOpenCvDnnSegmentation.git
-### 2. Download OpenCV.framework to ofxOpenCvDnnOpenPose/libs directory. 
+### 2. Download OpenCV.framework to ofxOpenCvDnnSegmentation/libs directory. 
     $ curl -O http://tetsuakibaba.jp/tmp/opencv2.framework.zip
     $ unzip opencv2.framework.zip
    
@@ -49,9 +50,19 @@ Or you may build your own opencv.framework from opencv source. ( https://tetsuak
 - of version: 0.10.1
 - addon: [ofxCv for OF master(0.10.0)](https://github.com/kylemcdonald/ofxCv/)
 
+## Sample Images
+### ENET results, Inference time: around 70[ms]
+![sample02](sample02.png) 
+![sample03](sample03.png) 
+### [FCN]((https://github.com/shelhamer/fcn.berkeleyvision.org)) Result. Inference time: around 1,600[ms]
+![sample04](person.gif)
+
 ## Licence
- - [MIT Lisence](https://opensource.org/licenses/MIT)
- - [Video by Pixabay from Pexels](https://www.pexels.com/video/mercedes-c-class-854710/), lisence:Creative Commons Zero.
+ - All materials except for the following videos and images:
+    - [MIT Lisence](https://opensource.org/licenses/MIT)
+ - Videos, images
+   - [Video by Pixabay from Pexels](https://www.pexels.com/video/mercedes-c-class-854710/), 
+   - [Video by Gsm Tareq from Pexels](https://www.pexels.com/video/woman-with-tattoo-on-her-back-2127849/)
 
 ## Author
 [TetsuakiBaba](https://github.com/TetsuakiBaba)

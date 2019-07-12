@@ -5,16 +5,16 @@ void ofApp::setup(){
     img.load(ofToDataPath("sample.jpg"));
     ofSetWindowShape(img.getWidth(), img.getHeight());
     segmentation.setNetworkImageSize(512,256);
-    
+ /*
     segmentation.setup(ofToDataPath("dnn/Enet-model-best.net"),
                        ofToDataPath("dnn/classlist.txt"));
      segmentation.scale = 0.00392;
-/*
+*/
     segmentation.setup(ofToDataPath("dnn/fcn8s-heavy-pascal.caffemodel"),
                        ofToDataPath("dnn/fcn8s-heavy-pascal.prototxt"),
                        ofToDataPath("dnn/pascal-classes.txt"));
     segmentation.scale = 1.0;
- */
+ 
     segmentation.update(img.getPixels());
     
    
@@ -24,9 +24,9 @@ void ofApp::setup(){
 void ofApp::update(){
     if( video.isLoaded() ){
         video.update();
+        video.nextFrame();
         if( video.isFrameNew() ){
             segmentation.update(video.getPixels());
-           
         }
     }
 }
@@ -52,10 +52,12 @@ void ofApp::draw(){
         segmentation.drawClass(i,150, // i: class id, 150: alpha value
                                0,0, ofGetWidth(), ofGetHeight());
     }
+    if( video.isLoaded())ofSaveFrame("/test/test.png");
     
     // Here is to show a color palette. x, y, width, height
     segmentation.drawColorPalette(10, 10, 100, ofGetHeight()-20);
    
+    
     // Image and Video file are available on this example
     ofDrawBitmapStringHighlight("Drag and Drop a image/video file",
                                  ofGetWidth()/2-100,
@@ -77,7 +79,8 @@ void ofApp::dragEvent(ofDragInfo dragInfo){
         if( video.isLoaded() )video.closeMovie();
         video.load(dragInfo.files[0]);
         ofSetWindowShape(video.getWidth(), video.getHeight());
-        video.play();
+        //video.play();
+        video.nextFrame();
     }
     else if( dragInfo.files[0].find(".jpg") != std::string::npos ){
         if( video.isLoaded() )video.closeMovie();
