@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euxo pipefail
-path_to_weights="http://tetsuakibaba.jp/ws/lib/exe/fetch.php?media=opencv_dnn:enet-model-best.net"
+path_to_weights="https://tetsuakibaba.jp/tmp/enet-model-best.net"
 if wget ${path_to_weights}; then
-	echo "downloading caffemodel"
+	echo "downloading Enet model"
 else
 	echo "wget is not installed. Falling back to curl"
 	curl -O "${path_to_weights}"
